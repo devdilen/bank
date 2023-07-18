@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+#r9{
+    transition: 2s ease-in-out;
+}
+#r9:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 10px 5px grey;
+}

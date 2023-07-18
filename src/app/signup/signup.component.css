@@ -1,0 +1,8 @@
+.r4{
+    background-color: rgba(0, 0, 0, 0.878);
+}
+  @media(min-width:763px){
+    #r9{
+        width: 100%;
+    }
+  }
