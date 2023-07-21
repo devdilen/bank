@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+accno:any
+usname:any
+passw:any
+copass:any
+
+
+register(){
+  var accno1=this.accno
+console.log(accno1);
+console.log(this.usname);
+console.log(this.passw);
+console.log(this.copass);
+
+}
+
 
 }
