@@ -7,31 +7,31 @@ import { DataService } from '../data.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit{
-data="happy banking with us"
-pdata="Enter your Account Number"
-varia1:any
+export class LoginComponent implements OnInit {
+  data = "happy banking with us";
+  pdata = "Enter your Account Number";
+  varia1: any;
+  accno: any;
+  psw: any;
 
+  constructor(private route: Router, private ds: DataService) {}
 
-  constructor(private route:Router,private ds:DataService){}
   ngOnInit(): void {
-   this.varia1=this.ds.sdata
-console.log(this.varia1);
-this.ds.smethod()
+    // Initialization code here
   }
 
-
-
-
-
-login(a:any){
-  console.log(a.value);
-  alert("event clicked")
-  this.route.navigateByUrl("home")
-  
-}
-accno(event:any){
-  console.log(event.target.value);
-  
-}
+  login(){
+    var accno = this.accno;
+    var psw = this.psw;
+    this.ds.login(accno, psw).subscribe(
+      (result: any) => {
+        alert(result.message);
+        this.route.navigateByUrl('home');
+      },
+      (result) => {
+        alert(result.error.message);
+        this.route.navigateByUrl('register');
+      }
+    );
+  }
 }

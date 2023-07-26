@@ -7,11 +7,11 @@
       <h1 class="text-center text-primary mt-4 p-2">Welcome User</h1>
       <form  class="mt-5 container" action="">
         <div >
-          <input (change)="accno($event)" class=" mt-2 p-2 form-control" type="text" [placeholder]="pdata">
+          <input [(ngModel)]="accno" name="l1" id="l2"  class=" mt-2 p-2 form-control" type="text" [placeholder]="pdata">
         </div>
-        <input #psw class="mt-3 p-2 form-control" type="password" placeholder="Enter your Password">
+        <input [(ngModel)]="psw" name="l3" id="l4"  class="mt-3 p-2 form-control" type="password" placeholder="Enter your Password">
         <div class="text-center">
-          <button (click)="login(psw)" type="submit" class="btn btn-outline-info w-50 mt-4 p-2">Login</button>
+          <button (click)="login()" type="submit" class="btn btn-outline-info w-50 mt-4 p-2">Login</button>
         </div>
        <div style="height: 200px;" class="text-center mt-2">
 <a style="text-decoration: none;" href="">Forgot Password?</a>
